@@ -5,9 +5,7 @@ import { DEFAULT_LANGUAGE, Language } from "./_translations/i18n";
 import { useEffect } from "react";
 
 function App() {
-  const { i18n, t } = useTranslation("translation", {
-    keyPrefix: "HOME",
-  });
+  const { i18n, t } = useTranslation("HOME");
 
   useEffect(() => {
     const previousLanguage = localStorage.getItem("i18nextLng");
