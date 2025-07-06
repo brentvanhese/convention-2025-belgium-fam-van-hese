@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ModeToggle } from "./_components/ModeToggle";
 import { Button } from "./components/ui/button";
-import { DEFAULT_LANGUAGE, Language } from "./_translations/i18n";
+import { Language } from "./_translations/i18n";
 import { useEffect } from "react";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const previousLanguage = localStorage.getItem("i18nextLng");
     if (!previousLanguage) {
-      localStorage.setItem("i18nextLng", DEFAULT_LANGUAGE);
+      localStorage.setItem("i18nextLng", i18n.language);
     } else {
       i18n.changeLanguage(previousLanguage);
     }
