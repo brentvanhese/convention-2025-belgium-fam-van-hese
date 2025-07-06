@@ -1,12 +1,27 @@
 import { useTranslation } from "react-i18next";
 import { ModeToggle } from "./_components/ModeToggle";
 import { Button } from "./components/ui/button";
-import { Language } from "./_translations/i18n";
+import { DEFAULT_LANGUAGE, Language } from "./_translations/i18n";
+import { useEffect } from "react";
 
 function App() {
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTranslation("translation", {
+    keyPrefix: "HOME",
+  });
 
-  console.log("Current language:", i18n.language);
+  useEffect(() => {
+    const previousLanguage = localStorage.getItem("i18nextLng");
+    if (!previousLanguage) {
+      localStorage.setItem("i18nextLng", DEFAULT_LANGUAGE);
+    } else {
+      i18n.changeLanguage(previousLanguage);
+    }
+  }, [i18n]);
+
+  const handleLanguageChange = (language: string) => {
+    i18n.changeLanguage(language);
+    localStorage.setItem("i18nextLng", language);
+  };
 
   return (
     <div className="w-full h-screen flex items-center justify-center">
@@ -17,18 +32,18 @@ function App() {
         </p>
         <ModeToggle />
         <Button
-          onClick={() => i18n.changeLanguage(Language.en)}
+          onClick={() => handleLanguageChange(Language.en)}
           disabled={i18n.language === Language.en}
         >
           {"CHANGE LANG TO EN"}
         </Button>
         <Button
-          onClick={() => i18n.changeLanguage(Language.nl)}
+          onClick={() => handleLanguageChange(Language.nl)}
           disabled={i18n.language === Language.nl}
         >
           {"CHANGE LANG TO NL"}
         </Button>
-        <p>{t("HOME.TITLE")}</p>
+        <p>{t("TITLE")}</p>
       </div>
     </div>
   );

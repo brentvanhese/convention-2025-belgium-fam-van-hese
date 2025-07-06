@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import LngDetector from "i18next-browser-languagedetector";
+import LanguageDetector from "i18next-browser-languagedetector";
 import { enTranslations, nlTranslations } from "./locales";
 
 export type TranslationKey = keyof typeof nlTranslations;
@@ -17,7 +17,7 @@ export const getCurrentLocale = () => {
 };
 
 i18n
-  .use(LngDetector)
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     fallbackLng: DEFAULT_LANGUAGE,
