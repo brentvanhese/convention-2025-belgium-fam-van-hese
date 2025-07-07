@@ -6,6 +6,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
 import { CustomAvatar } from "./CustomAvatar";
 import { useTranslation } from "react-i18next";
 import { Language } from "@/_translations/i18n";
@@ -16,202 +17,433 @@ import avatarBrent from "@/_assets/_images/avatarBrent.jpg";
 import avatarDebora from "@/_assets/_images/avatarDebora.jpg";
 import avatarDavid from "@/_assets/_images/avatarDavid.jpg";
 import logoConvention from "@/_assets/_images/logoConvention.png";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export const NavBar = () => {
   const { i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full flex justify-between items-center px-4 py-2">
-      <div className="flex items-center gap-6">
+    <div className="w-full">
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex justify-between items-center px-4 py-2">
+        <div className="flex items-center gap-6">
+          <a href="/" className="flex items-center">
+            <img
+              src={logoConvention}
+              alt="Convention Logo"
+              className="h-24 w-auto hover:opacity-80 transition-opacity"
+            />
+          </a>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/">Home</NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Family</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md relative overflow-hidden"
+                          href="/"
+                        >
+                          <div
+                            className="absolute inset-0 bg-cover bg-center opacity-20"
+                            style={{
+                              backgroundImage: `url(${familyPhoto})`,
+                            }}
+                          ></div>
+                          <div className="relative z-10 mb-2 mt-4 text-lg font-medium">
+                            Family Van Hese
+                          </div>
+                          <p className="relative z-10 text-sm leading-tight text-muted-foreground">
+                            Meet the family members
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <a
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          href="/convention-2025-belgium-fam-van-hese/person/david"
+                        >
+                          <div className="flex items-center gap-2">
+                            <CustomAvatar
+                              name="David"
+                              fallBackUrl="DA"
+                              imageUrl={avatarDavid}
+                            />
+                          </div>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <a
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          href="/convention-2025-belgium-fam-van-hese/person/debora"
+                        >
+                          <div className="flex items-center gap-2">
+                            <CustomAvatar
+                              name="Debora"
+                              fallBackUrl="DE"
+                              imageUrl={avatarDebora}
+                            />
+                          </div>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <a
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          href="/convention-2025-belgium-fam-van-hese/person/brent"
+                        >
+                          <div className="flex items-center gap-2">
+                            <CustomAvatar
+                              name="Brent"
+                              fallBackUrl="BR"
+                              imageUrl={avatarBrent}
+                            />
+                          </div>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Language</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-2 p-4 w-[200px]">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <button
+                          className={cn(
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
+                            i18n.language === Language.en &&
+                              "bg-accent text-accent-foreground"
+                          )}
+                          disabled={i18n.language === Language.en}
+                          onClick={() => i18n.changeLanguage(Language.en)}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            English
+                            {i18n.language === Language.en && (
+                              <span className="text-xs">✓</span>
+                            )}
+                          </div>
+                        </button>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <button
+                          className={cn(
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
+                            i18n.language === Language.nl &&
+                              "bg-accent text-accent-foreground"
+                          )}
+                          disabled={i18n.language === Language.nl}
+                          onClick={() => i18n.changeLanguage(Language.nl)}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            Nederlands
+                            {i18n.language === Language.nl && (
+                              <span className="text-xs">✓</span>
+                            )}
+                          </div>
+                        </button>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Theme</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-2 p-4 w-[200px]">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <button
+                          className={cn(
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
+                            theme === "system" &&
+                              "bg-accent text-accent-foreground"
+                          )}
+                          disabled={theme === "system"}
+                          onClick={() => setTheme("system")}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            System
+                            {theme === "system" && (
+                              <span className="text-xs">✓</span>
+                            )}
+                          </div>
+                        </button>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <button
+                          className={cn(
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
+                            theme === "light" &&
+                              "bg-accent text-accent-foreground"
+                          )}
+                          disabled={theme === "light"}
+                          onClick={() => setTheme("light")}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            Light
+                            {theme === "light" && (
+                              <span className="text-xs">✓</span>
+                            )}
+                          </div>
+                        </button>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <button
+                          className={cn(
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
+                            theme === "dark" &&
+                              "bg-accent text-accent-foreground"
+                          )}
+                          disabled={theme === "dark"}
+                          onClick={() => setTheme("dark")}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            Dark
+                            {theme === "dark" && (
+                              <span className="text-xs">✓</span>
+                            )}
+                          </div>
+                        </button>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden flex justify-between items-center px-4 py-2">
         <a href="/" className="flex items-center">
           <img
             src={logoConvention}
             alt="Convention Logo"
-            className="h-24 w-auto hover:opacity-80 transition-opacity"
+            className="h-12 w-auto"
           />
         </a>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/">Home</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Family</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <li className="row-span-3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md relative overflow-hidden"
-                        href="/"
-                      >
-                        <div
-                          className="absolute inset-0 bg-cover bg-center opacity-20"
-                          style={{
-                            backgroundImage: `url(${familyPhoto})`,
-                          }}
-                        ></div>
-                        <div className="relative z-10 mb-2 mt-4 text-lg font-medium">
-                          Family Van Hese
-                        </div>
-                        <p className="relative z-10 text-sm leading-tight text-muted-foreground">
-                          Meet the family members
-                        </p>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        href="/convention-2025-belgium-fam-van-hese/person/david"
-                      >
-                        <div className="flex items-center gap-2">
-                          <CustomAvatar
-                            name="David"
-                            fallBackUrl="DA"
-                            imageUrl={avatarDavid}
-                          />
-                        </div>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        href="/convention-2025-belgium-fam-van-hese/person/debora"
-                      >
-                        <div className="flex items-center gap-2">
-                          <CustomAvatar
-                            name="Debora"
-                            fallBackUrl="DE"
-                            imageUrl={avatarDebora}
-                          />
-                        </div>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        href="/convention-2025-belgium-fam-van-hese/person/brent"
-                      >
-                        <div className="flex items-center gap-2">
-                          <CustomAvatar
-                            name="Brent"
-                            fallBackUrl="BR"
-                            imageUrl={avatarBrent}
-                          />
-                        </div>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="p-2"
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </Button>
       </div>
 
-      <div className="flex items-center gap-4">
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Language</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-2 p-4 w-[200px]">
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <button
-                        className={cn(
-                          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
-                          i18n.language === Language.en &&
-                            "bg-accent text-accent-foreground"
-                        )}
-                        disabled={i18n.language === Language.en}
-                        onClick={() => i18n.changeLanguage(Language.en)}
-                      >
-                        <div className="flex items-center gap-2">English</div>
-                      </button>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <button
-                        className={cn(
-                          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
-                          i18n.language === Language.nl &&
-                            "bg-accent text-accent-foreground"
-                        )}
-                        disabled={i18n.language === Language.nl}
-                        onClick={() => i18n.changeLanguage(Language.nl)}
-                      >
-                        <div className="flex items-center gap-2">
-                          Nederlands
-                        </div>
-                      </button>
-                    </NavigationMenuLink>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Theme</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-2 p-4 w-[200px]">
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <button
-                        className={cn(
-                          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
-                          theme === "system" &&
-                            "bg-accent text-accent-foreground"
-                        )}
-                        disabled={theme === "system"}
-                        onClick={() => setTheme("system")}
-                      >
-                        <div className="flex items-center gap-2">System</div>
-                      </button>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <button
-                        className={cn(
-                          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
-                          theme === "light" &&
-                            "bg-accent text-accent-foreground"
-                        )}
-                        disabled={theme === "light"}
-                        onClick={() => setTheme("light")}
-                      >
-                        <div className="flex items-center gap-2">Light</div>
-                      </button>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <button
-                        className={cn(
-                          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
-                          theme === "dark" && "bg-accent text-accent-foreground"
-                        )}
-                        disabled={theme === "dark"}
-                        onClick={() => setTheme("dark")}
-                      >
-                        <div className="flex items-center gap-2">Dark</div>
-                      </button>
-                    </NavigationMenuLink>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-background border-t border-border shadow-lg">
+          <div className="px-4 py-4 space-y-4">
+            {/* Navigation Section */}
+            <div className="space-y-3">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                Navigation
+              </div>
+              <div className="space-y-2">
+                <a
+                  href="/"
+                  className="block py-2 px-3 rounded-md text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </a>
+                <div className="space-y-2">
+                  <div className="text-sm font-medium text-muted-foreground px-3">
+                    Family
+                  </div>
+                  <div className="pl-6 space-y-1">
+                    <a
+                      href="/convention-2025-belgium-fam-van-hese/person/david"
+                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <CustomAvatar
+                        name="David"
+                        fallBackUrl="DA"
+                        imageUrl={avatarDavid}
+                      />
+                      David
+                    </a>
+                    <a
+                      href="/convention-2025-belgium-fam-van-hese/person/debora"
+                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <CustomAvatar
+                        name="Debora"
+                        fallBackUrl="DE"
+                        imageUrl={avatarDebora}
+                      />
+                      Debora
+                    </a>
+                    <a
+                      href="/convention-2025-belgium-fam-van-hese/person/brent"
+                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <CustomAvatar
+                        name="Brent"
+                        fallBackUrl="BR"
+                        imageUrl={avatarBrent}
+                      />
+                      Brent
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Separator */}
+            <div className="border-t border-border my-4"></div>
+
+            {/* Settings Section */}
+            <div className="space-y-4">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                Settings
+              </div>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="text-sm font-medium text-muted-foreground px-3">
+                    Language
+                  </div>{" "}
+                  <div className="pl-6 space-y-1">
+                    <button
+                      className={cn(
+                        "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
+                        i18n.language === Language.en
+                          ? "bg-accent text-accent-foreground cursor-default"
+                          : "text-foreground hover:bg-accent hover:text-accent-foreground"
+                      )}
+                      disabled={i18n.language === Language.en}
+                      onClick={() => {
+                        i18n.changeLanguage(Language.en);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      English
+                      {i18n.language === Language.en && (
+                        <span className="ml-auto text-xs">✓</span>
+                      )}
+                    </button>
+                    <button
+                      className={cn(
+                        "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
+                        i18n.language === Language.nl
+                          ? "bg-accent text-accent-foreground cursor-default"
+                          : "text-foreground hover:bg-accent hover:text-accent-foreground"
+                      )}
+                      disabled={i18n.language === Language.nl}
+                      onClick={() => {
+                        i18n.changeLanguage(Language.nl);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Nederlands
+                      {i18n.language === Language.nl && (
+                        <span className="ml-auto text-xs">✓</span>
+                      )}
+                    </button>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-sm font-medium text-muted-foreground px-3">
+                    Theme
+                  </div>
+                  <div className="pl-6 space-y-1">
+                    <button
+                      className={cn(
+                        "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
+                        theme === "system"
+                          ? "bg-accent text-accent-foreground cursor-default"
+                          : "text-foreground hover:bg-accent hover:text-accent-foreground"
+                      )}
+                      disabled={theme === "system"}
+                      onClick={() => {
+                        setTheme("system");
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      System
+                      {theme === "system" && (
+                        <span className="ml-auto text-xs">✓</span>
+                      )}
+                    </button>
+                    <button
+                      className={cn(
+                        "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
+                        theme === "light"
+                          ? "bg-accent text-accent-foreground cursor-default"
+                          : "text-foreground hover:bg-accent hover:text-accent-foreground"
+                      )}
+                      disabled={theme === "light"}
+                      onClick={() => {
+                        setTheme("light");
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Light
+                      {theme === "light" && (
+                        <span className="ml-auto text-xs">✓</span>
+                      )}
+                    </button>
+                    <button
+                      className={cn(
+                        "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
+                        theme === "dark"
+                          ? "bg-accent text-accent-foreground cursor-default"
+                          : "text-foreground hover:bg-accent hover:text-accent-foreground"
+                      )}
+                      disabled={theme === "dark"}
+                      onClick={() => {
+                        setTheme("dark");
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Dark
+                      {theme === "dark" && (
+                        <span className="ml-auto text-xs">✓</span>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
