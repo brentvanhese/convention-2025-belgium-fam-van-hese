@@ -4,22 +4,28 @@
     "DESCRIPTION": "Dit is de startpagina van onze applicatie waar je verschillende bronnen en links kunt vinden."
   },
   "NAV_BAR": {
-    "HOME": "Home",
-    "FAMILY": {
-      "TITLE": "Familie",
-      "SUB_TITLE": "Familie Van Hese",
-      "DESCRIPTION": "Maak kennis met de familieleden"
+    "NAVIGATION": {
+      "TITLE": "Navigatie",
+      "HOME": "Home",
+      "FAMILY": {
+        "TITLE": "Familie",
+        "SUB_TITLE": "Familie Van Hese",
+        "DESCRIPTION": "Maak kennis met de familieleden"
+      }
     },
-    "LANGUAGE": {
-      "TITLE": "Taal",
-      "EN": "English",
-      "NL": "Nederlands"
-    },
-    "THEME": {
-      "TITLE": "Weergave",
-      "DARK": "Donkere wwergave",
-      "LIGHT": "Lichte weergave",
-      "SYSTEM": "Zelfde als systeem"
+    "SETTINGS": {
+      "TITLE": "Instellingen",
+      "LANGUAGE": {
+        "TITLE": "Taal",
+        "EN": "English",
+        "NL": "Nederlands"
+      },
+      "THEME": {
+        "TITLE": "Weergave",
+        "DARK": "Donkere wwergave",
+        "LIGHT": "Lichte weergave",
+        "SYSTEM": "Zelfde als systeem"
+      }
     }
   }
 }

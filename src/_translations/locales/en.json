@@ -4,22 +4,28 @@
     "DESCRIPTION": "This is the home page of our application where you can find various resources and links."
   },
   "NAV_BAR": {
-    "HOME": "Home",
-    "FAMILY": {
-      "TITLE": "Family",
-      "SUB_TITLE": "Family Van Hese",
-      "DESCRIPTION": "Meet the family members"
+    "NAVIGATION": {
+      "TITLE": "Navigation",
+      "HOME": "Home",
+      "FAMILY": {
+        "TITLE": "Family",
+        "SUB_TITLE": "Family Van Hese",
+        "DESCRIPTION": "Meet the family members"
+      }
     },
-    "LANGUAGE": {
-      "TITLE": "Language",
-      "EN": "English",
-      "NL": "Nederlands"
-    },
-    "THEME": {
-      "TITLE": "Theme",
-      "DARK": "Dark Mode",
-      "LIGHT": "Light Mode",
-      "SYSTEM": "Same as system"
+    "SETTINGS": {
+      "TITLE": "Settings",
+      "LANGUAGE": {
+        "TITLE": "Language",
+        "EN": "English",
+        "NL": "Nederlands"
+      },
+      "THEME": {
+        "TITLE": "Theme",
+        "DARK": "Dark Mode",
+        "LIGHT": "Light Mode",
+        "SYSTEM": "Same as system"
+      }
     }
   }
 }

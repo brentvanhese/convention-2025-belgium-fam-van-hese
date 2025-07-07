@@ -62,12 +62,12 @@ export const NavBar = () => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink href="/">
-                  {t("NAV_BAR.HOME")}
+                  {t("NAV_BAR.NAVIGATION.HOME")}
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  {t("NAV_BAR.FAMILY.TITLE")}
+                  {t("NAV_BAR.NAVIGATION.FAMILY.TITLE")}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -84,10 +84,10 @@ export const NavBar = () => {
                             }}
                           ></div>
                           <div className="relative z-10 mb-2 mt-4 text-lg font-medium">
-                            {t("NAV_BAR.FAMILY.SUB_TITLE")}
+                            {t("NAV_BAR.NAVIGATION.FAMILY.SUB_TITLE")}
                           </div>
                           <p className="relative z-10 text-sm leading-tight text-muted-foreground">
-                            {t("NAV_BAR.FAMILY.DESCRIPTION")}
+                            {t("NAV_BAR.NAVIGATION.FAMILY.DESCRIPTION")}
                           </p>
                         </a>
                       </NavigationMenuLink>
@@ -152,7 +152,7 @@ export const NavBar = () => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  {t("NAV_BAR.LANGUAGE.TITLE")}
+                  {t("NAV_BAR.SETTINGS.LANGUAGE.TITLE")}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-2 p-4 w-[180px]">
@@ -168,7 +168,7 @@ export const NavBar = () => {
                           onClick={() => i18n.changeLanguage(Language.en)}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            {t("NAV_BAR.LANGUAGE.EN")}
+                            {t("NAV_BAR.SETTINGS.LANGUAGE.EN")}
                             {i18n.language === Language.en && (
                               <span className="text-xs">✓</span>
                             )}
@@ -188,7 +188,7 @@ export const NavBar = () => {
                           onClick={() => i18n.changeLanguage(Language.nl)}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            {t("NAV_BAR.LANGUAGE.NL")}
+                            {t("NAV_BAR.SETTINGS.LANGUAGE.NL")}
                             {i18n.language === Language.nl && (
                               <span className="text-xs">✓</span>
                             )}
@@ -201,7 +201,7 @@ export const NavBar = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  {t("NAV_BAR.THEME.TITLE")}
+                  {t("NAV_BAR.SETTINGS.THEME.TITLE")}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-2 p-4 w-[180px]">
@@ -217,7 +217,7 @@ export const NavBar = () => {
                           onClick={() => setTheme("system")}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            {t("NAV_BAR.THEME.SYSTEM")}
+                            {t("NAV_BAR.SETTINGS.THEME.SYSTEM")}
                             {theme === "system" && (
                               <span className="text-xs">✓</span>
                             )}
@@ -237,7 +237,7 @@ export const NavBar = () => {
                           onClick={() => setTheme("light")}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            {t("NAV_BAR.THEME.LIGHT")}
+                            {t("NAV_BAR.SETTINGS.THEME.LIGHT")}
                             {theme === "light" && (
                               <span className="text-xs">✓</span>
                             )}
@@ -257,7 +257,7 @@ export const NavBar = () => {
                           onClick={() => setTheme("dark")}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            {t("NAV_BAR.THEME.DARK")}
+                            {t("NAV_BAR.SETTINGS.THEME.DARK")}
                             {theme === "dark" && (
                               <span className="text-xs">✓</span>
                             )}
@@ -299,7 +299,7 @@ export const NavBar = () => {
             {/* Navigation Section */}
             <div className="space-y-3">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                Navigation
+                {t("NAV_BAR.NAVIGATION.TITLE")}
               </div>
               <div className="space-y-2">
                 <a
@@ -307,11 +307,11 @@ export const NavBar = () => {
                   className="block py-2 px-3 rounded-md text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {t("NAV_BAR.HOME")}
+                  {t("NAV_BAR.NAVIGATION.HOME")}
                 </a>
                 <div className="space-y-2">
                   <div className="text-sm font-medium text-muted-foreground px-3">
-                    {t("NAV_BAR.FAMILY.TITLE")}
+                    {t("NAV_BAR.NAVIGATION.FAMILY.TITLE")}
                   </div>
                   <div className="pl-6 space-y-1">
                     <a
@@ -358,12 +358,12 @@ export const NavBar = () => {
             {/* Settings Section */}
             <div className="space-y-4">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                Settings
+                {t("NAV_BAR.SETTINGS.TITLE")}
               </div>
               <div className="space-y-4">
                 <div className="space-y-2">
                   <div className="text-sm font-medium text-muted-foreground px-3">
-                    {t("NAV_BAR.LANGUAGE.TITLE")}
+                    {t("NAV_BAR.SETTINGS.LANGUAGE.TITLE")}
                   </div>{" "}
                   <div className="pl-6 space-y-1">
                     <button
@@ -379,7 +379,7 @@ export const NavBar = () => {
                         setIsMobileMenuOpen(false);
                       }}
                     >
-                      {t("NAV_BAR.LANGUAGE.EN")}
+                      {t("NAV_BAR.SETTINGS.LANGUAGE.EN")}
                       {i18n.language === Language.en && (
                         <span className="ml-auto text-xs">✓</span>
                       )}
@@ -397,7 +397,7 @@ export const NavBar = () => {
                         setIsMobileMenuOpen(false);
                       }}
                     >
-                      {t("NAV_BAR.LANGUAGE.NL")}
+                      {t("NAV_BAR.SETTINGS.LANGUAGE.NL")}
                       {i18n.language === Language.nl && (
                         <span className="ml-auto text-xs">✓</span>
                       )}
@@ -406,7 +406,7 @@ export const NavBar = () => {
                 </div>
                 <div className="space-y-2">
                   <div className="text-sm font-medium text-muted-foreground px-3">
-                    {t("NAV_BAR.THEME.TITLE")}
+                    {t("NAV_BAR.SETTINGS.THEME.TITLE")}
                   </div>
                   <div className="pl-6 space-y-1">
                     <button
@@ -422,7 +422,7 @@ export const NavBar = () => {
                         setIsMobileMenuOpen(false);
                       }}
                     >
-                      {t("NAV_BAR.THEME.SYSTEM")}
+                      {t("NAV_BAR.SETTINGS.THEME.SYSTEM")}
                       {theme === "system" && (
                         <span className="ml-auto text-xs">✓</span>
                       )}
@@ -440,7 +440,7 @@ export const NavBar = () => {
                         setIsMobileMenuOpen(false);
                       }}
                     >
-                      {t("NAV_BAR.THEME.LIGHT")}
+                      {t("NAV_BAR.SETTINGS.THEME.LIGHT")}
                       {theme === "light" && (
                         <span className="ml-auto text-xs">✓</span>
                       )}
@@ -458,7 +458,7 @@ export const NavBar = () => {
                         setIsMobileMenuOpen(false);
                       }}
                     >
-                      {t("NAV_BAR.THEME.DARK")}
+                      {t("NAV_BAR.SETTINGS.THEME.DARK")}
                       {theme === "dark" && (
                         <span className="ml-auto text-xs">✓</span>
                       )}
