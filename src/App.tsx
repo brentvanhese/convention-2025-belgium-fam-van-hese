@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router";
 import Home from "./home/Home";
+import { NavBar } from "./_components";
 
 function App() {
   const { i18n } = useTranslation();
@@ -16,21 +17,24 @@ function App() {
   }, [i18n]);
 
   return (
-    <Routes>
-      <Route index path="/" element={<Home />} />
-      <Route
-        path="person"
-        element={
-          <div>
-            <Outlet />
-          </div>
-        }
-      >
-        <Route index element={<Navigate to="/" replace />} />
-        <Route path=":name" element={<div>person Name</div>} />
-      </Route>
-      <Route path="*" element={<div>404 - Page Not Found</div>} />
-    </Routes>
+    <>
+      <NavBar />
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route
+          path="person"
+          element={
+            <div>
+              <Outlet />
+            </div>
+          }
+        >
+          <Route index element={<Navigate to="/" replace />} />
+          <Route path=":name" element={<div>person Name</div>} />
+        </Route>
+        <Route path="*" element={<div>404 - Page Not Found</div>} />
+      </Routes>
+    </>
   );
 }
 
