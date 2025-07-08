@@ -22,7 +22,7 @@ import { Menu, X } from "lucide-react";
 
 export const NavBar = () => {
   const { i18n, t } = useTranslation();
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -55,7 +55,7 @@ export const NavBar = () => {
             <img
               src={logoConvention}
               alt="Convention Logo"
-              className="h-24 w-auto hover:opacity-80 transition-opacity"
+              className="h-24 w-auto hover:opacity-80 transition-opacity ml-4"
             />
           </a>
           <NavigationMenu>
@@ -78,7 +78,12 @@ export const NavBar = () => {
                           href="/"
                         >
                           <div
-                            className="absolute inset-0 bg-cover bg-center opacity-20"
+                            className={cn(
+                              "absolute inset-0 bg-cover bg-center",
+                              resolvedTheme === "light"
+                                ? "opacity-40"
+                                : "opacity-20"
+                            )}
                             style={{
                               backgroundImage: `url(${familyPhoto})`,
                             }}
@@ -86,7 +91,14 @@ export const NavBar = () => {
                           <div className="relative z-10 mb-2 mt-4 text-lg font-medium">
                             {t("NAV_BAR.NAVIGATION.FAMILY.SUB_TITLE")}
                           </div>
-                          <p className="relative z-10 text-sm leading-tight text-muted-foreground">
+                          <p
+                            className={cn(
+                              "relative z-10 text-sm leading-tight",
+                              resolvedTheme === "light"
+                                ? "text-foreground"
+                                : "text-muted-foreground"
+                            )}
+                          >
                             {t("NAV_BAR.NAVIGATION.FAMILY.DESCRIPTION")}
                           </p>
                         </a>

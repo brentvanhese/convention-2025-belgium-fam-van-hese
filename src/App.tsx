@@ -19,21 +19,23 @@ function App() {
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route
-          path="person"
-          element={
-            <div>
-              <Outlet />
-            </div>
-          }
-        >
-          <Route index element={<Navigate to="/" replace />} />
-          <Route path=":name" element={<div>person Name</div>} />
-        </Route>
-        <Route path="*" element={<div>404 - Page Not Found</div>} />
-      </Routes>
+      <div className="flex px-8 py-4">
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route
+            path="person"
+            element={
+              <div>
+                <Outlet />
+              </div>
+            }
+          >
+            <Route index element={<Navigate to="/" replace />} />
+            <Route path=":name" element={<div>person Name</div>} />
+          </Route>
+          <Route path="*" element={<div>404 - Page Not Found</div>} />
+        </Routes>
+      </div>
     </>
   );
 }
