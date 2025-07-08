@@ -17,8 +17,7 @@ import { Menu, X } from "lucide-react";
 
 import familyPhoto from "@/_assets/_images/familyPhotoBornem.jpg";
 import avatarBrent from "@/_assets/_images/avatarBrent.jpg";
-import avatarDebora from "@/_assets/_images/avatarDebora.jpg";
-import avatarDavid from "@/_assets/_images/avatarDavid.jpg";
+import avatarDavidAndDebora from "@/_assets/_images/avatarDavidAndDebora.jpg";
 import logoConvention from "@/_assets/_images/logoConvention.png";
 
 export const NavBar = () => {
@@ -113,25 +112,9 @@ export const NavBar = () => {
                         >
                           <div className="flex items-center gap-2">
                             <CustomAvatar
-                              name="David"
-                              fallBackUrl="DA"
-                              imageUrl={avatarDavid}
-                            />
-                          </div>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/convention-2025-belgium-fam-van-hese/person/debora"
-                        >
-                          <div className="flex items-center gap-2">
-                            <CustomAvatar
-                              name="Debora"
-                              fallBackUrl="DE"
-                              imageUrl={avatarDebora}
+                              name="David & Debora"
+                              fallBackUrl="DD"
+                              imageUrl={avatarDavidAndDebora}
                             />
                           </div>
                         </a>
@@ -170,12 +153,18 @@ export const NavBar = () => {
                 <NavigationMenuContent>
                   <ul className="grid gap-2 p-4 w-[180px]">
                     <li>
-                      <NavigationMenuLink asChild>
+                      <NavigationMenuLink
+                        asChild
+                        className={cn(
+                          i18n.language === Language.en &&
+                            "bg-apple hover:bg-apple"
+                        )}
+                      >
                         <button
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             i18n.language === Language.en &&
-                              "bg-accent text-accent-foreground"
+                              "bg-apple text-accent-foreground"
                           )}
                           disabled={i18n.language === Language.en}
                           onClick={() => i18n.changeLanguage(Language.en)}
@@ -190,12 +179,18 @@ export const NavBar = () => {
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink asChild>
+                      <NavigationMenuLink
+                        asChild
+                        className={cn(
+                          i18n.language === Language.nl &&
+                            "bg-apple hover:bg-apple"
+                        )}
+                      >
                         <button
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             i18n.language === Language.nl &&
-                              "bg-accent text-accent-foreground"
+                              "bg-apple hover:bg-apple text-accent-foreground"
                           )}
                           disabled={i18n.language === Language.nl}
                           onClick={() => i18n.changeLanguage(Language.nl)}
@@ -219,12 +214,17 @@ export const NavBar = () => {
                 <NavigationMenuContent>
                   <ul className="grid gap-2 p-4 w-[180px]">
                     <li>
-                      <NavigationMenuLink asChild>
+                      <NavigationMenuLink
+                        asChild
+                        className={cn(
+                          theme === "system" && "bg-apple hover:bg-apple"
+                        )}
+                      >
                         <button
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             theme === "system" &&
-                              "bg-accent text-accent-foreground"
+                              "bg-apple text-accent-foreground"
                           )}
                           disabled={theme === "system"}
                           onClick={() => setTheme("system")}
@@ -239,12 +239,17 @@ export const NavBar = () => {
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink asChild>
+                      <NavigationMenuLink
+                        asChild
+                        className={cn(
+                          theme === "light" && "bg-apple hover:bg-apple"
+                        )}
+                      >
                         <button
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             theme === "light" &&
-                              "bg-accent text-accent-foreground"
+                              "bg-apple text-accent-foreground"
                           )}
                           disabled={theme === "light"}
                           onClick={() => setTheme("light")}
@@ -259,12 +264,17 @@ export const NavBar = () => {
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink asChild>
+                      <NavigationMenuLink
+                        asChild
+                        className={cn(
+                          theme === "dark" && "bg-apple hover:bg-apple"
+                        )}
+                      >
                         <button
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             theme === "dark" &&
-                              "bg-accent text-accent-foreground"
+                              "bg-apple text-accent-foreground"
                           )}
                           disabled={theme === "dark"}
                           onClick={() => setTheme("dark")}
@@ -333,20 +343,9 @@ export const NavBar = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <CustomAvatar
-                        name="David"
-                        fallBackUrl="DA"
-                        imageUrl={avatarDavid}
-                      />
-                    </a>
-                    <a
-                      href="/convention-2025-belgium-fam-van-hese/person/debora"
-                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <CustomAvatar
-                        name="Debora"
-                        fallBackUrl="DE"
-                        imageUrl={avatarDebora}
+                        name="David & Debora"
+                        fallBackUrl="DD"
+                        imageUrl={avatarDavidAndDebora}
                       />
                     </a>
                     <a
@@ -383,7 +382,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         i18n.language === Language.en
-                          ? "bg-accent text-accent-foreground cursor-default"
+                          ? "bg-apple text-accent-foreground cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={i18n.language === Language.en}
@@ -401,7 +400,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         i18n.language === Language.nl
-                          ? "bg-accent text-accent-foreground cursor-default"
+                          ? "bg-apple text-accent-foreground cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={i18n.language === Language.nl}
@@ -426,7 +425,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         theme === "system"
-                          ? "bg-accent text-accent-foreground cursor-default"
+                          ? "bg-apple text-accent-foreground cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={theme === "system"}
@@ -444,7 +443,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         theme === "light"
-                          ? "bg-accent text-accent-foreground cursor-default"
+                          ? "bg-apple text-accent-foreground cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={theme === "light"}
@@ -462,7 +461,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         theme === "dark"
-                          ? "bg-accent text-accent-foreground cursor-default"
+                          ? "bg-apple text-accent-foreground cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={theme === "dark"}
