@@ -7,8 +7,13 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+
+import familyPhoto from "@/_assets/_images/familyPhotoBornem.jpg";
+import familyPhoto1 from "@/_assets/_images/familyPhotoBornem.jpg";
+import familyPhoto2 from "@/_assets/_images/familyPhotoBornem.jpg";
+import familyPhoto3 from "@/_assets/_images/familyPhotoBornem.jpg";
+import familyPhoto4 from "@/_assets/_images/familyPhotoBornem.jpg";
 
 type CarouselProps = {
   className?: string;
@@ -22,6 +27,15 @@ export const CustomCarousel = ({
   const [api, setApi] = useState<CarouselApi>();
   const [currentInterval, setCurrentInterval] = useState(autoPlayInterval);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(1);
+
+  const images = [
+    familyPhoto,
+    familyPhoto1,
+    familyPhoto2,
+    familyPhoto3,
+    familyPhoto4,
+  ];
 
   useEffect(() => {
     if (!api) return;
@@ -45,6 +59,39 @@ export const CustomCarousel = ({
     };
   }, [api, autoPlayInterval, currentInterval]);
 
+  useEffect(() => {
+    if (!api) return;
+
+    const updateSlideOpacity = () => {
+      const currentIndex = api.selectedScrollSnap();
+      const slides = api.slideNodes();
+
+      // Update current slide number
+      setCurrentSlide(currentIndex + 1);
+
+      slides.forEach((slide, index) => {
+        const card = slide.querySelector("[data-slide-card]");
+        if (card) {
+          if (index === currentIndex) {
+            card.setAttribute("data-inactive", "false");
+          } else {
+            card.setAttribute("data-inactive", "true");
+          }
+        }
+      });
+    };
+
+    // Set initial opacity
+    updateSlideOpacity();
+
+    // Listen for slide changes
+    api.on("select", updateSlideOpacity);
+
+    return () => {
+      api.off("select", updateSlideOpacity);
+    };
+  }, [api]);
+
   const handleManualNavigation = (direction: "prev" | "next") => {
     if (!api) return;
 
@@ -61,22 +108,44 @@ export const CustomCarousel = ({
     setCurrentInterval(10000);
   };
   return (
-    <Carousel setApi={setApi} className={cn("w-full max-w-xs", className)}>
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious onClick={() => handleManualNavigation("prev")} />
-      <CarouselNext onClick={() => handleManualNavigation("next")} />
-    </Carousel>
+    <div className={className}>
+      <Carousel
+        setApi={setApi}
+        className="w-full mx-auto max-w-3xs md:max-w-2xl lg:max-w-4xl select-none"
+        opts={{
+          align: "center",
+          loop: true,
+        }}
+      >
+        <CarouselContent className="-ml-2 md:-ml-4">
+          {images.map((image, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
+            >
+              <div className="p-1">
+                <Card
+                  data-slide-card
+                  className="py-0 transition-opacity duration-300 data-[inactive=true]:opacity-50"
+                >
+                  <CardContent className="flex aspect-square items-center justify-center p-4">
+                    <img
+                      src={image}
+                      alt={`Carousel item ${index + 1}`}
+                      className="h-full w-full object-cover rounded-md"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious onClick={() => handleManualNavigation("prev")} />
+        <CarouselNext onClick={() => handleManualNavigation("next")} />
+      </Carousel>
+      <div className="text-muted-foreground py-2 text-center text-sm">
+        Slide {currentSlide} of {images.length}
+      </div>
+    </div>
   );
 };

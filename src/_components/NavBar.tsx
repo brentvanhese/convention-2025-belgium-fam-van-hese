@@ -12,13 +12,14 @@ import { useTranslation } from "react-i18next";
 import { Language } from "@/_translations/i18n";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/_context/ThemeProvider";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+
 import familyPhoto from "@/_assets/_images/familyPhotoBornem.jpg";
 import avatarBrent from "@/_assets/_images/avatarBrent.jpg";
 import avatarDebora from "@/_assets/_images/avatarDebora.jpg";
 import avatarDavid from "@/_assets/_images/avatarDavid.jpg";
 import logoConvention from "@/_assets/_images/logoConvention.png";
-import { useState, useRef, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 
 export const NavBar = () => {
   const { i18n, t } = useTranslation();
