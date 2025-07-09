@@ -1,16 +1,36 @@
-import { ModeToggle } from "./_components/ModeToggle";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+import { Navigate, Outlet, Route, Routes } from "react-router";
+import Home from "./home/Home";
+import { NavBar } from "./_components";
+import { PersonDetail } from "./person";
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const previousLanguage = localStorage.getItem("i18nextLng");
+    if (!previousLanguage) {
+      localStorage.setItem("i18nextLng", i18n.language);
+    } else {
+      i18n.changeLanguage(previousLanguage);
+    }
+  }, [i18n]);
+
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="text-center">
-        <p className="text-3xl font-bold underline">WORK IN PROGRESS</p>
-        <p className="text-xl italic mt-4">
-          The verry beginning of the convention website of family Van Hese
-        </p>
-        <ModeToggle />
+    <>
+      <NavBar />
+      <div className="flex px-8 py-4">
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="person" element={<Outlet />}>
+            <Route index element={<Navigate to="/" replace />} />
+            <Route path=":name" element={<PersonDetail />} />
+          </Route>
+          <Route path="*" element={<div>404 - Page Not Found</div>} />
+        </Routes>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,0 +1,43 @@
+{
+  "HOME": {
+    "TITLE": "Maak kennis met familie Van Hese",
+    "DESCRIPTION": "Dit is de startpagina van onze applicatie waar je verschillende bronnen en links kunt vinden. Dit is de startpagina van onze applicatie waar je verschillende bronnen en links kunt vinden. Dit is de startpagina van onze applicatie waar je verschillende bronnen en links kunt vinden.",
+    "ABOUT_US": {
+      "TITLE": "Over Ons",
+      "DESCRIPTION": "Leer meer over de familie Van Hese en hun geschiedenis. Leer meer over de familie Van Hese en hun geschiedenis. Leer meer over de familie Van Hese en hun geschiedenis."
+    },
+    "SINT_NIKLAAS": {
+      "TITLE": "Sint-Niklaas",
+      "DESCRIPTION": "Sint-Niklaas is een stad in België, bekend om zijn rijke geschiedenis en levendige cultuur. Het is de geboorteplaats van de familie Van Hese."
+    },
+    "FAMILY_MEMBERS": {
+      "TITLE": "Familieleden",
+      "NAVIGATE_PERSON_DETAIL": "Meer"
+    }
+  },
+  "NAV_BAR": {
+    "NAVIGATION": {
+      "TITLE": "Navigatie",
+      "HOME": "Home",
+      "FAMILY": {
+        "TITLE": "Familie",
+        "SUB_TITLE": "Familie Van Hese",
+        "DESCRIPTION": "Maak kennis met de familieleden"
+      }
+    },
+    "SETTINGS": {
+      "TITLE": "Instellingen",
+      "LANGUAGE": {
+        "TITLE": "Taal",
+        "EN": "English",
+        "NL": "Nederlands"
+      },
+      "THEME": {
+        "TITLE": "Weergave",
+        "DARK": "Donkere weergave",
+        "LIGHT": "Lichte weergave",
+        "SYSTEM": "Zelfde als systeem"
+      }
+    }
+  }
+}
