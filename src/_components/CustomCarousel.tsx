@@ -128,11 +128,11 @@ export const CustomCarousel = ({
                   data-slide-card
                   className="py-0 transition-opacity duration-300 data-[inactive=true]:opacity-50"
                 >
-                  <CardContent className="flex aspect-square items-center justify-center p-4">
+                  <CardContent className="flex-1 aspect-square items-center justify-center p-4">
                     <img
                       src={image}
                       alt={`Carousel item ${index + 1}`}
-                      className="h-full w-full object-cover rounded-md"
+                      className="w-full object-cover rounded-md"
                     />
                   </CardContent>
                 </Card>
