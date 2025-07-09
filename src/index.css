@@ -48,6 +48,16 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --christine: #e7790f;
+  --au-chico: #975265;
+  --matisse: #1e6395;
+  --forest-green: #27912f;
+  --nevada: #636c74;
+  --dawn-pink: #f1e4e2;
+  --venice-blue: #044c84;
+  --danube: #7cb0d7;
+  --norway: #a8c1a9;
+  --apple: #3c9843;
 }
 
 @theme inline {
@@ -86,6 +96,16 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-christine: var(--christine);
+  --color-au-chico: var(--au-chico);
+  --color-matisse: var(--matisse);
+  --color-forest-green: var(--forest-green);
+  --color-nevada: var(--nevada);
+  --color-dawn-pink: var(--dawn-pink);
+  --color-venice-blue: var(--venice-blue);
+  --color-danube: var(--danube);
+  --color-norway: var(--norway);
+  --color-apple: var(--apple);
 }
 
 .dark {

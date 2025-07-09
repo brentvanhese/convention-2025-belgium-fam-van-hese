@@ -1,6 +1,43 @@
 {
   "HOME": {
-    "TITLE": "Welcome to the Home Page",
-    "DESCRIPTION": "This is the home page of our application where you can find various resources and links."
+    "TITLE": "Meet family Van Hese",
+    "DESCRIPTION": "This is the home page of our application where you can find various resources and links. This is the home page of our application where you can find various resources and links. This is the home page of our application where you can find various resources and links.",
+    "ABOUT_US": {
+      "TITLE": "About Us",
+      "DESCRIPTION": "Learn more about the Van Hese family and their history. Learn more about the Van Hese family and their history. Learn more about the Van Hese family and their history."
+    },
+    "SINT_NIKLAAS": {
+      "TITLE": "Sint-Niklaas",
+      "DESCRIPTION": "Sint-Niklaas is a city in Belgium, known for its rich history and vibrant culture. It is the birthplace of the Van Hese family."
+    },
+    "FAMILY_MEMBERS": {
+      "TITLE": "Family members",
+      "NAVIGATE_PERSON_DETAIL": "More"
+    }
+  },
+  "NAV_BAR": {
+    "NAVIGATION": {
+      "TITLE": "Navigation",
+      "HOME": "Home",
+      "FAMILY": {
+        "TITLE": "Family",
+        "SUB_TITLE": "Family Van Hese",
+        "DESCRIPTION": "Meet the family members"
+      }
+    },
+    "SETTINGS": {
+      "TITLE": "Settings",
+      "LANGUAGE": {
+        "TITLE": "Language",
+        "EN": "English",
+        "NL": "Nederlands"
+      },
+      "THEME": {
+        "TITLE": "Theme",
+        "DARK": "Dark Mode",
+        "LIGHT": "Light Mode",
+        "SYSTEM": "Same as system"
+      }
+    }
   }
 }
