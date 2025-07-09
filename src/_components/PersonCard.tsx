@@ -28,7 +28,11 @@ export const PersonCard = ({
         <h2 className="text-xl text-center font-semibold">{name}</h2>
       </CardContent>
       <CardFooter className="pt-0">
-        <Button className="w-full" onClick={() => navigate(href)}>
+        <Button
+          className="w-full"
+          variant={"secondary"}
+          onClick={() => navigate(href)}
+        >
           {btnName}
         </Button>
       </CardFooter>

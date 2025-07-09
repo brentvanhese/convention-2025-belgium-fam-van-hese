@@ -164,7 +164,7 @@ export const NavBar = () => {
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             i18n.language === Language.en &&
-                              "bg-apple text-accent-foreground"
+                              "bg-apple text-white hover:text-white"
                           )}
                           disabled={i18n.language === Language.en}
                           onClick={() => i18n.changeLanguage(Language.en)}
@@ -190,7 +190,7 @@ export const NavBar = () => {
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             i18n.language === Language.nl &&
-                              "bg-apple hover:bg-apple text-accent-foreground"
+                              "bg-apple hover:bg-apple text-white hover:text-white"
                           )}
                           disabled={i18n.language === Language.nl}
                           onClick={() => i18n.changeLanguage(Language.nl)}
@@ -224,7 +224,7 @@ export const NavBar = () => {
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             theme === "system" &&
-                              "bg-apple text-accent-foreground"
+                              "bg-apple text-white hover:text-white"
                           )}
                           disabled={theme === "system"}
                           onClick={() => setTheme("system")}
@@ -249,7 +249,7 @@ export const NavBar = () => {
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             theme === "light" &&
-                              "bg-apple text-accent-foreground"
+                              "bg-apple text-white hover:text-white"
                           )}
                           disabled={theme === "light"}
                           onClick={() => setTheme("light")}
@@ -274,7 +274,7 @@ export const NavBar = () => {
                           className={cn(
                             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left",
                             theme === "dark" &&
-                              "bg-apple text-accent-foreground"
+                              "bg-apple text-white hover:text-white"
                           )}
                           disabled={theme === "dark"}
                           onClick={() => setTheme("dark")}
@@ -382,7 +382,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         i18n.language === Language.en
-                          ? "bg-apple text-accent-foreground cursor-default"
+                          ? "bg-apple text-white cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={i18n.language === Language.en}
@@ -400,7 +400,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         i18n.language === Language.nl
-                          ? "bg-apple text-accent-foreground cursor-default"
+                          ? "bg-apple text-white cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={i18n.language === Language.nl}
@@ -425,7 +425,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         theme === "system"
-                          ? "bg-apple text-accent-foreground cursor-default"
+                          ? "bg-apple text-white cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={theme === "system"}
@@ -443,7 +443,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         theme === "light"
-                          ? "bg-apple text-accent-foreground cursor-default"
+                          ? "bg-apple text-white cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={theme === "light"}
@@ -461,7 +461,7 @@ export const NavBar = () => {
                       className={cn(
                         "flex items-center w-full py-2 px-3 rounded-md text-sm text-left transition-colors",
                         theme === "dark"
-                          ? "bg-apple text-accent-foreground cursor-default"
+                          ? "bg-apple text-white cursor-default"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       )}
                       disabled={theme === "dark"}
