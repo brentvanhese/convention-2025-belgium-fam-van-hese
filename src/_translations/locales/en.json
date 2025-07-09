@@ -9,6 +9,10 @@
     "SINT_NIKLAAS": {
       "TITLE": "Sint-Niklaas",
       "DESCRIPTION": "Sint-Niklaas is a city in Belgium, known for its rich history and vibrant culture. It is the birthplace of the Van Hese family."
+    },
+    "FAMILY_MEMBERS": {
+      "TITLE": "Family members",
+      "NAVIGATE_PERSON_DETAIL": "More"
     }
   },
   "NAV_BAR": {

@@ -9,6 +9,10 @@
     "SINT_NIKLAAS": {
       "TITLE": "Sint-Niklaas",
       "DESCRIPTION": "Sint-Niklaas is een stad in België, bekend om zijn rijke geschiedenis en levendige cultuur. Het is de geboorteplaats van de familie Van Hese."
+    },
+    "FAMILY_MEMBERS": {
+      "TITLE": "Familieleden",
+      "NAVIGATE_PERSON_DETAIL": "Meer"
     }
   },
   "NAV_BAR": {
