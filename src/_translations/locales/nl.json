@@ -58,5 +58,11 @@
         "SYSTEM": "Zelfde als systeem"
       }
     }
+  },
+  "NOT_FOUND": {
+    "TITLE": "404 - Pagina Niet Gevonden",
+    "DESCRIPTION": "Oeps! De pagina die je zoekt bestaat niet.",
+    "MESSAGE": "Het lijkt erop dat je van het pad bent afgedwaald. Laten we je terug naar home brengen!",
+    "GO_HOME": "Naar Home"
   }
 }

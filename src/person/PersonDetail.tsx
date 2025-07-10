@@ -41,7 +41,10 @@ export const PersonDetail = () => {
   const photos = person?.photos;
   const translationKey = person?.translationKey;
 
-  if (person == null && displayName) navigate("/404");
+  if (person == null || !displayName) {
+    navigate("/");
+    return <></>;
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
