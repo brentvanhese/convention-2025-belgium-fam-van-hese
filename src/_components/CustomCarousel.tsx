@@ -11,9 +11,11 @@ import { useEffect, useState } from "react";
 
 import familyPhoto from "@/_assets/_images/familyPhotoBornem.jpg";
 import familyPhoto1 from "@/_assets/_images/familyPhotoBornem.jpg";
-import familyPhoto2 from "@/_assets/_images/familyPhotoBornem.jpg";
-import familyPhoto3 from "@/_assets/_images/familyPhotoBornem.jpg";
-import familyPhoto4 from "@/_assets/_images/familyPhotoBornem.jpg";
+import familyPhoto2 from "@/_assets/_images/familyRiver.jpg";
+import familyPhoto3 from "@/_assets/_images/davidAndBrentBbq.jpg";
+import familyPhoto4 from "@/_assets/_images/davidAndDeboraVacation.jpg";
+import familyPhoto5 from "@/_assets/_images/familyFrame.jpg";
+import familyPhoto6 from "@/_assets/_images/familyTheDam.jpg";
 
 type CarouselProps = {
   className?: string;
@@ -35,6 +37,8 @@ export const CustomCarousel = ({
     familyPhoto2,
     familyPhoto3,
     familyPhoto4,
+    familyPhoto5,
+    familyPhoto6,
   ];
 
   useEffect(() => {
