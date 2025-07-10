@@ -1,14 +1,15 @@
 {
   "HOME": {
-    "TITLE": "Maak kennis met familie Van Hese",
-    "DESCRIPTION": "Dit is de startpagina van onze applicatie waar je verschillende bronnen en links kunt vinden. Dit is de startpagina van onze applicatie waar je verschillende bronnen en links kunt vinden. Dit is de startpagina van onze applicatie waar je verschillende bronnen en links kunt vinden.",
+    "TITLE": "Familie Van Hese - Welkom op onze website",
+    "DESCRIPTION": "We waren zo blij om jullie te hebben ontmoet op ons congres in België. We voelden de broederschap (en de zusters natuurlijk 😀). Wat moet het dan wel niet zijn als we in de nieuwe wereld zijn. We kijken er naar uit ❤️ !!!",
     "ABOUT_US": {
       "TITLE": "Over Ons",
-      "DESCRIPTION": "Leer meer over de familie Van Hese en hun geschiedenis. Leer meer over de familie Van Hese en hun geschiedenis. Leer meer over de familie Van Hese en hun geschiedenis."
+      "DESCRIPTION": "Zoals je op de foto's hebt gezien, zijn we een familie van 3 personen: David, Debora en onze zoon Brent. We dienen in Sint-Niklaas Zuid. Een prachtige gemeente met ongeveer 100 verkondigers. We houden heel veel van hen en doen alles wat we kunnen om hen te helpen. Ook al kennen we elkaar niet, jullie zijn in onze harten omdat we 1 familie zijn. Dat voelt zo wonderlijk!",
+      "MAIL_LABEL": "E-mail ons"
     },
     "SINT_NIKLAAS": {
-      "TITLE": "Sint-Niklaas",
-      "DESCRIPTION": "Sint-Niklaas is een stad in België, bekend om zijn rijke geschiedenis en levendige cultuur. Het is de geboorteplaats van de familie Van Hese."
+      "TITLE": "Waar wonen we?",
+      "DESCRIPTION": "We wonen in Sint-Niklaas. Het heeft de grootste marktplaats van België (België is een klein land dus...). Een keer per jaar is er een speciaal evenement met heteluchtballonnen. Spectaculair als je het nog nooit hebt gezien, zoals je op de foto kunt zien."
     },
     "FAMILY_MEMBERS": {
       "TITLE": "Familieleden",
@@ -17,12 +18,12 @@
   },
   "PERSON": {
     "BRENT": {
-      "TEXT_1": "Maak kennis met Brent, een gepassioneerd lid van de familie Van Hese. Geboren en getogen in Sint-Niklaas, is hij altijd diep verbonden geweest met zijn familieroots en tradities.",
-      "TEXT_2": "Brent houdt van tijd doorbrengen met familie en het verkennen van de prachtige landschappen van België. Hij staat bekend om zijn warme persoonlijkheid en toewijding aan het in leven houden van familietradities."
+      "TEXT_1": "Hallo, ik ben Brent. Ik ben een software ontwikkelaar (raad eens wie deze website heeft gemaakt... 50% ik, 50% AI 😂).\n\nDaarnaast hou ik ervan om te sporten met broeders en zusters. De foto werd genomen bij een hardloopevenement genaamd de '10 miles van Antwerpen'. Daarnaast doe ik ook weg / gravel wielrennen, badminton en in de winter ski ik graag. Elke maand is er zaalvoetbal met enkele broeders. Het is zo heerlijk om dit allemaal te doen met mijn broeders en zusters!",
+      "TEXT_2": "Naast het sporten, gebruik ik ook graag mijn tijd voor Jehovah. Wanneer het in mijn schema past, help ik graag bij LDC. Of schrijf me in als hulppionier voor een maand. Het is zo prachtig om te zien hoe Jehovah ons zegent met alle broeders en zusters over de hele wereld.\n\nIk ben dankbaar voor de gelegenheid om Jehovah te dienen en deel uit te maken van deze wonderlijke familie. En jullie te ontmoeten op dit speciale congres in België. We houden van jullie! Geef onze liefde door aan de broeders en zusters in jullie gemeente!\n\nBrent"
     },
     "DAVID_AND_DEBORA": {
-      "TEXT_1": "David is een hoeksteen van de familie Van Hese en brengt wijsheid en begeleiding naar alle familiebijeenkomsten. Zijn verhalen en ervaringen hebben de waarden van de familie gevormd.",
-      "TEXT_2": "Met jaren ervaring en een diepe liefde voor zijn familie, blijft David een inspirerende figuur. Hij houdt van het delen van familiegeschiedenis en het creëren van nieuwe herinneringen met geliefden."
+      "TEXT_1": "We houden van Jehovah en we zijn zo dankbaar dat onze zoon Brent een fijne man is die Jehovah dient met heel zijn hart.\n\nWe houden van alle scheppingen van God, maar vooral van de zee. En wanneer we op vakantie gaan snorkelen, zien we de mooiste dingen die hij heeft gemaakt. Het enige wat we kunnen doen is dankbaarder zijn!",
+      "TEXT_2": "Natuurlijk is het belangrijkste in ons leven, zoals bij ons allemaal, om in de prediking te gaan en te zoeken naar mensen die willen luisteren en hun hart openen voor Jehovah.\n\nNu in deze laatste dagen doen we dit werk over de hele wereld. Daarom voelen we ons meer verbonden. Meer dan ooit.\n\nHet was zo fijn om jullie in België te ontmoeten! We houden van jullie! Geef onze liefde door aan de broeders en zusters in jullie gemeente!\n\nDavid en Debora"
     }
   },
   "PERSON_DETAIL": {

@@ -1,14 +1,16 @@
 {
   "HOME": {
-    "TITLE": "Meet family Van Hese",
-    "DESCRIPTION": "This is the home page of our application where you can find various resources and links. This is the home page of our application where you can find various resources and links. This is the home page of our application where you can find various resources and links.",
+    "TITLE": "Family Van Hese - Welcome to our website",
+    "DESCRIPTION": "We were so glad to have met you at our convention in Belgium. We felt the brothership (and sisters of course 😀). So what must it be when we are in the new world. WE look foreword to it ❤️ !!!",
     "ABOUT_US": {
       "TITLE": "About Us",
-      "DESCRIPTION": "Learn more about the Van Hese family and their history. Learn more about the Van Hese family and their history. Learn more about the Van Hese family and their history."
+      "DESCRIPTION": "Like you have seen on the pictures, we are a family of 3 persons: David, Debora and our son Brent. We serve in Sint-Niklaas South. A loverly congregation with about 100 publishers. We love them very much and do everything we can to help them. Even tho we do not know each other, you're in ou're harts because we are 1 family. That feels so wonderful! ",
+      "MAIL": "mailto:devanhesekes@gmail.com",
+      "MAIL_LABEL": "E-mail us"
     },
     "SINT_NIKLAAS": {
-      "TITLE": "Sint-Niklaas",
-      "DESCRIPTION": "Sint-Niklaas is a city in Belgium, known for its rich history and vibrant culture. It is the birthplace of the Van Hese family."
+      "TITLE": "Where do we live?",
+      "DESCRIPTION": "We live in Sint-Niklaas. It has the largest market square in Belgium (Belgium is a small country so...). Once a year there is a special event with hot air balloons. Spectacular if you have never seen it before, as you can see in the photo."
     },
     "FAMILY_MEMBERS": {
       "TITLE": "Family members",
@@ -17,16 +19,16 @@
   },
   "PERSON": {
     "BRENT": {
-      "TEXT_1": "Meet Brent, a passionate member of the Van Hese family. Born and raised in Sint-Niklaas, he has always been deeply connected to his family roots and traditions.",
-      "TEXT_2": "Brent loves spending time with family and exploring the beautiful landscapes of Belgium. He is known for his warm personality and dedication to keeping family traditions alive.",
+      "TEXT_1": "Hi, I'm Brent. I am a software developer (guess who made this website...  50% me, 50% AI 😂).\n\nBesides that I love to sport with brothers and sister. The photo was taken at a running event called the '10 miles of Antwerp'. Aside from that I also do road / gravel cycling, badminton and in the winter I like to ski. Every month there is indoor football with some brothers. It is so wonderful to do all of this with my brothers and sister!",
+      "TEXT_2": "Apart from the sporting, I also love to use my time for Jehovah. When it fits in my schedule I like to help at LDC. Or sign me up as auxiliary pioneer for a month. It is so wonderful to see how Jehovah is blessing us with all the brothers and sisters around the world.\n\nI'm grateful for the opportunity to serve Jehovah and to be part of this wonderful family. And meeting you at the special convention in Belgium. We love you! Give our love to the brothers and sisters in your congregation!\n\nBrent",
       "WHATSAPP_1": "https://wa.me/+32471216051",
       "WHATSAPP_2": "",
       "INSTAGRAM": "https://www.instagram.com/vanhesebrent",
       "EMAIL": "mailto:vanhesebrent@gmail.com"
     },
     "DAVID_AND_DEBORA": {
-      "TEXT_1": "David is a cornerstone of the Van Hese family, bringing wisdom and guidance to all family gatherings. His stories and experiences have shaped the family's values.",
-      "TEXT_2": "With years of experience and a deep love for his family, David continues to be an inspiring figure. He enjoys sharing family history and creating new memories with loved ones.",
+      "TEXT_1": "We love Jehovah and we are so grateful that our son Brent is fine man serving Jehovah with all is heart.\n\nWe love all Gods creations but most of all the sea. And when we go snorkeling on vacation, we see the most beautiful things he made. All we can do is be more grateful!",
+      "TEXT_2": "Off course the most important thing in our life, like all of us, is to go in the ministry and search for people who will listen and open there hearts for Jehovah.\n\nNow in these last days we do this work al over the world. Thats why we feel more connected. More then ever.\n\nIt was so nice to mee you in Belgium! We love you! Give our love to the brothers and sisters in yu're congregation!\n\nDavid and Debora",
       "WHATSAPP_1": "https://wa.me/+32478562657",
       "WHATSAPP_2": "https://wa.me/+32474400836",
       "INSTAGRAM": "",

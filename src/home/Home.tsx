@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import sintNiklaasPhoto from "@/_assets/_images/sintNiklaas.jpg";
 import avatarBrent from "@/_assets/_images/avatarBrent.jpg";
 import avatarDavidAndDebora from "@/_assets/_images/avatarDavidAndDebora.jpg";
+import { Button } from "@/components/ui/button";
+import Icon from "@/_components/Icon";
 
 function Home() {
   const { t } = useTranslation();
@@ -28,6 +30,15 @@ function Home() {
         <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           {t("HOME.ABOUT_US.DESCRIPTION")}
         </p>
+        <Button
+          variant={"secondary"}
+          onClick={() => {
+            window.open(t("HOME.ABOUT_US.MAIL"));
+          }}
+        >
+          <Icon name={"Envelop"} className="fill-white" />
+          <p>{t("HOME.ABOUT_US.MAIL_LABEL")}</p>
+        </Button>
       </section>
 
       <section className="space-y-6">

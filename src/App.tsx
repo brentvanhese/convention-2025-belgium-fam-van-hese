@@ -9,9 +9,9 @@ function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    const previousLanguage = localStorage.getItem("i18nextLng");
+    const previousLanguage = localStorage.getItem("lang");
     if (!previousLanguage) {
-      localStorage.setItem("i18nextLng", i18n.language);
+      localStorage.setItem("lang", i18n.language);
     } else {
       i18n.changeLanguage(previousLanguage);
     }

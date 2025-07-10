@@ -2,10 +2,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router";
 
-import sintNiklaasPhoto from "@/_assets/_images/sintNiklaas.jpg";
+import turtlePhoto from "@/_assets/_images/turtle.jpg";
+import trolleyPhoto from "@/_assets/_images/davidAndDeboraTrolley.jpg";
+import brentLdcPhoto from "@/_assets/_images/brentLdc.jpg";
+import brentRunning from "@/_assets/_images/brentRunning.jpg";
 import avatarBrent from "@/_assets/_images/avatarBrent.jpg";
 import avatarDavidAndDebora from "@/_assets/_images/avatarDavidAndDebora.jpg";
-import familyPhotoBornem from "@/_assets/_images/familyPhotoBornem.jpg";
 import Icon from "@/_components/Icon";
 import { Button } from "@/components/ui/button";
 
@@ -13,13 +15,13 @@ import { Button } from "@/components/ui/button";
 const personData = {
   brent: {
     avatar: avatarBrent,
-    photos: [sintNiklaasPhoto, familyPhotoBornem],
+    photos: [brentRunning, brentLdcPhoto],
     names: ["Brent"],
     translationKey: "BRENT",
   },
   david_and_debora: {
     avatar: avatarDavidAndDebora,
-    photos: [familyPhotoBornem, sintNiklaasPhoto],
+    photos: [turtlePhoto, trolleyPhoto],
     names: ["David", "Debora"],
     translationKey: "DAVID_AND_DEBORA",
   },
@@ -60,9 +62,15 @@ export const PersonDetail = () => {
       <section className="space-y-6">
         <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
           <div className="space-y-4">
-            <p className="text-muted-foreground leading-relaxed">
-              {t(`PERSON.${translationKey}.TEXT_1`)}
-            </p>
+            <p
+              className="text-muted-foreground leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html: t(`PERSON.${translationKey}.TEXT_1`).replace(
+                  /\n/g,
+                  "<br>"
+                ),
+              }}
+            />
           </div>
           <div className="flex justify-center">
             <img
@@ -84,9 +92,15 @@ export const PersonDetail = () => {
             />
           </div>
           <div className="order-1 md:order-2 space-y-4">
-            <p className="text-muted-foreground leading-relaxed">
-              {t(`PERSON.${translationKey}.TEXT_2`)}
-            </p>
+            <p
+              className="text-muted-foreground leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html: t(`PERSON.${translationKey}.TEXT_2`).replace(
+                  /\n/g,
+                  "<br>"
+                ),
+              }}
+            />
           </div>
         </div>
       </section>
