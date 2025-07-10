@@ -58,13 +58,13 @@ function Home() {
           <PersonCard
             name="David & Debora"
             imgUrl={avatarDavidAndDebora}
-            href="/person/David_and_Debora"
+            href="/person/david_and_debora"
             btnName={t("HOME.FAMILY_MEMBERS.NAVIGATE_PERSON_DETAIL")}
           />
           <PersonCard
             name="Brent"
             imgUrl={avatarBrent}
-            href="/person/Brent"
+            href="/person/brent"
             btnName={t("HOME.FAMILY_MEMBERS.NAVIGATE_PERSON_DETAIL")}
           />
         </div>

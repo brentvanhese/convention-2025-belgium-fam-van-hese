@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "@/_context/ThemeProvider";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useNavigate } from "react-router";
 
 import familyPhoto from "@/_assets/_images/familyPhotoBornem.jpg";
 import avatarBrent from "@/_assets/_images/avatarBrent.jpg";
@@ -25,6 +26,7 @@ export const NavBar = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -51,18 +53,18 @@ export const NavBar = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex justify-between items-center px-4 py-2">
         <div className="flex items-center gap-6">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
               src={logoConvention}
               alt="Convention Logo"
               className="h-24 w-auto hover:opacity-80 transition-opacity ml-4"
             />
-          </a>
+          </Link>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/">
-                  {t("NAV_BAR.NAVIGATION.HOME")}
+                <NavigationMenuLink asChild>
+                  <Link to="/">{t("NAV_BAR.NAVIGATION.HOME")}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -73,9 +75,9 @@ export const NavBar = () => {
                   <ul className="grid gap-3 p-6 w-[500px] grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md relative overflow-hidden"
-                          href="/"
+                          to="/"
                         >
                           <div
                             className={cn(
@@ -101,14 +103,14 @@ export const NavBar = () => {
                           >
                             {t("NAV_BAR.NAVIGATION.FAMILY.DESCRIPTION")}
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/convention-2025-belgium-fam-van-hese/person/David_and_Debora"
+                          to="/person/david_and_debora"
                         >
                           <div className="flex items-center gap-2">
                             <CustomAvatar
@@ -117,14 +119,14 @@ export const NavBar = () => {
                               imageUrl={avatarDavidAndDebora}
                             />
                           </div>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/convention-2025-belgium-fam-van-hese/person/Brent"
+                          to="/person/brent"
                         >
                           <div className="flex items-center gap-2">
                             <CustomAvatar
@@ -133,7 +135,7 @@ export const NavBar = () => {
                               imageUrl={avatarBrent}
                             />
                           </div>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                   </ul>
@@ -298,13 +300,13 @@ export const NavBar = () => {
 
       {/* Mobile Navigation */}
       <div className="md:hidden flex justify-between items-center px-4 py-2">
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={logoConvention}
             alt="Convention Logo"
             className="h-20 w-auto"
           />
-        </a>
+        </Link>
         <Button
           variant="ghost"
           size="sm"
@@ -325,40 +327,44 @@ export const NavBar = () => {
                 {t("NAV_BAR.NAVIGATION.TITLE")}
               </div>
               <div className="space-y-2">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="block py-2 px-3 rounded-md text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t("NAV_BAR.NAVIGATION.HOME")}
-                </a>
+                </Link>
                 <div className="space-y-2">
                   <div className="text-sm font-medium text-muted-foreground px-3">
                     {t("NAV_BAR.NAVIGATION.FAMILY.TITLE")}
                   </div>
                   <div className="pl-6 space-y-1">
-                    <a
-                      href="/convention-2025-belgium-fam-van-hese/person/David_and_Debora"
-                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                    <button
+                      onClick={() => {
+                        navigate("/person/david_and_debora");
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors w-full text-left"
                     >
                       <CustomAvatar
                         name="David & Debora"
                         fallBackUrl="DD"
                         imageUrl={avatarDavidAndDebora}
                       />
-                    </a>
-                    <a
-                      href="/convention-2025-belgium-fam-van-hese/person/Brent"
-                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                    </button>
+                    <button
+                      onClick={() => {
+                        navigate("/person/brent");
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors w-full text-left"
                     >
                       <CustomAvatar
                         name="Brent"
                         fallBackUrl="BR"
                         imageUrl={avatarBrent}
                       />
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
