@@ -17,7 +17,7 @@ export const CustomAvatar = ({
         <AvatarImage src={imageUrl} alt={`Avatar ${name}`} />
         <AvatarFallback>{fallBackUrl}</AvatarFallback>
       </Avatar>
-      <a className="my-auto ml-4">{name}</a>
+      <span className="my-auto ml-4">{name}</span>
     </div>
   );
 };
