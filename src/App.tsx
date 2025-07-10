@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router";
 import Home from "./home/Home";
-import { NavBar } from "./_components";
+import { NavBar, ScrollToTop } from "./_components";
 import { PersonDetail } from "./person";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <NavBar />
       <div className="flex px-8 py-4">
         <Routes>
