@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router";
 
 import sintNiklaasPhoto from "@/_assets/_images/sintNiklaas.jpg";
+import Icon from "@/_components/Icon";
 
 export const PersonDetail = () => {
   const { t } = useTranslation();
@@ -57,6 +58,10 @@ export const PersonDetail = () => {
             </p>
           </div>
         </div>
+      </section>
+
+      <section>
+        <Icon name={"WhatsAppLogo"} className="fill-black" />
       </section>
     </div>
   );
