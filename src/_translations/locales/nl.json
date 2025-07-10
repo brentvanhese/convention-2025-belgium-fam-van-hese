@@ -15,6 +15,24 @@
       "NAVIGATE_PERSON_DETAIL": "Meer"
     }
   },
+  "PERSON": {
+    "BRENT": {
+      "TEXT_1": "Maak kennis met Brent, een gepassioneerd lid van de familie Van Hese. Geboren en getogen in Sint-Niklaas, is hij altijd diep verbonden geweest met zijn familieroots en tradities.",
+      "TEXT_2": "Brent houdt van tijd doorbrengen met familie en het verkennen van de prachtige landschappen van België. Hij staat bekend om zijn warme persoonlijkheid en toewijding aan het in leven houden van familietradities."
+    },
+    "DAVID_AND_DEBORA": {
+      "TEXT_1": "David is een hoeksteen van de familie Van Hese en brengt wijsheid en begeleiding naar alle familiebijeenkomsten. Zijn verhalen en ervaringen hebben de waarden van de familie gevormd.",
+      "TEXT_2": "Met jaren ervaring en een diepe liefde voor zijn familie, blijft David een inspirerende figuur. Hij houdt van het delen van familiegeschiedenis en het creëren van nieuwe herinneringen met geliefden."
+    }
+  },
+  "PERSON_DETAIL": {
+    "CONTACT": {
+      "TITLE": "Contact",
+      "WHATSAPP": "WhatsApp",
+      "INSTAGRAM": "Instagram",
+      "EMAIL": "E-mail"
+    }
+  },
   "NAV_BAR": {
     "NAVIGATION": {
       "TITLE": "Navigatie",

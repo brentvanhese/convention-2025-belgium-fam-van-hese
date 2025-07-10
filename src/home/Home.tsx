@@ -58,7 +58,7 @@ function Home() {
           <PersonCard
             name="David & Debora"
             imgUrl={avatarDavidAndDebora}
-            href="/person/DavidAndDebora"
+            href="/person/David_and_Debora"
             btnName={t("HOME.FAMILY_MEMBERS.NAVIGATE_PERSON_DETAIL")}
           />
           <PersonCard

@@ -15,6 +15,32 @@
       "NAVIGATE_PERSON_DETAIL": "More"
     }
   },
+  "PERSON": {
+    "BRENT": {
+      "TEXT_1": "Meet Brent, a passionate member of the Van Hese family. Born and raised in Sint-Niklaas, he has always been deeply connected to his family roots and traditions.",
+      "TEXT_2": "Brent loves spending time with family and exploring the beautiful landscapes of Belgium. He is known for his warm personality and dedication to keeping family traditions alive.",
+      "WHATSAPP_1": "https://wa.me/+32471216051",
+      "WHATSAPP_2": "",
+      "INSTAGRAM": "https://www.instagram.com/vanhesebrent",
+      "EMAIL": "mailto:vanhesebrent@gmail.com"
+    },
+    "DAVID_AND_DEBORA": {
+      "TEXT_1": "David is a cornerstone of the Van Hese family, bringing wisdom and guidance to all family gatherings. His stories and experiences have shaped the family's values.",
+      "TEXT_2": "With years of experience and a deep love for his family, David continues to be an inspiring figure. He enjoys sharing family history and creating new memories with loved ones.",
+      "WHATSAPP_1": "https://wa.me/+32478562657",
+      "WHATSAPP_2": "https://wa.me/+32474400836",
+      "INSTAGRAM": "",
+      "EMAIL": "mailto:devanhesekes@gmail.com"
+    }
+  },
+  "PERSON_DETAIL": {
+    "CONTACT": {
+      "TITLE": "Contact",
+      "WHATSAPP": "WhatsApp",
+      "INSTAGRAM": "Instagram",
+      "EMAIL": "E-mail"
+    }
+  },
   "NAV_BAR": {
     "NAVIGATION": {
       "TITLE": "Navigation",

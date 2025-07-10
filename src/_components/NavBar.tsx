@@ -108,7 +108,7 @@ export const NavBar = () => {
                       <NavigationMenuLink asChild>
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/convention-2025-belgium-fam-van-hese/person/DavidAndDebora"
+                          href="/convention-2025-belgium-fam-van-hese/person/David_and_Debora"
                         >
                           <div className="flex items-center gap-2">
                             <CustomAvatar
@@ -338,7 +338,7 @@ export const NavBar = () => {
                   </div>
                   <div className="pl-6 space-y-1">
                     <a
-                      href="/convention-2025-belgium-fam-van-hese/person/DavidAndDebora"
+                      href="/convention-2025-belgium-fam-van-hese/person/David_and_Debora"
                       className="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
