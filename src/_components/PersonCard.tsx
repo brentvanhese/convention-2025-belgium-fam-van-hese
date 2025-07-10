@@ -17,8 +17,12 @@ export const PersonCard = ({
 }: PersonCardProps) => {
   const navigate = useNavigate();
 
+  const handleCardClick = () => {
+    navigate(href);
+  };
+
   return (
-    <Card className="w-full max-w-sm mx-auto">
+    <Card className="w-full max-w-sm mx-auto" onClick={handleCardClick}>
       <CardContent className="pt-6 pb-4">
         <img
           src={imgUrl}
@@ -31,7 +35,7 @@ export const PersonCard = ({
         <Button
           className="w-full"
           variant={"secondary"}
-          onClick={() => navigate(href)}
+          onClick={handleCardClick}
         >
           {btnName}
         </Button>
