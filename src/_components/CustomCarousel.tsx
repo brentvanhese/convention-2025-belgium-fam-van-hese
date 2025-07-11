@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
-import familyPhoto from "@/_assets/_images/familyPhotoBornem.jpg";
+import familyPhoto from "@/_assets/_images/familyLensCloth.JPG";
 import familyPhoto1 from "@/_assets/_images/familyPhotoBornem.jpg";
 import familyPhoto2 from "@/_assets/_images/familyRiver.jpg";
 import familyPhoto3 from "@/_assets/_images/davidAndBrentBbq.jpg";
